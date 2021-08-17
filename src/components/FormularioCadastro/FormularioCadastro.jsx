@@ -1,14 +1,22 @@
-import React from 'react'
+import { React, useState } from 'react'
 import { Switch, TextField, Button, FormControlLabel } from '@material-ui/core'
 
 // Quando criamos uma função,
 function FormularioCadastro() {
 
+    //  Usando o hook useState para gaurdar a info de nome, a função setNome é a função que irei usar para alteração do valor da variavel nome
+    const [nome, setNome] = useState("Ricardo");
+
     //  O retorno dela precisa ser a árvore de renderização
     return (
-        <form action="">
+        <form onSubmit={(event) => { event.preventDefault(); console.log(nome); }}>
 
-            <TextField id="nome" label="Nome" variant="outlined" fullWidth margin="normal" />
+            <TextField value={nome} onChange={(event) => {
+                setNome(event.target.value);
+                if(nome.length > 3 ){
+                    setNome(nome.substr(0,3))
+                }
+            }} id="nome" label="Nome" variant="outlined" fullWidth margin="normal" />
 
             <TextField id="sobrenome" label="Sobrenome" variant="outlined" fullWidth margin="normal" />
 

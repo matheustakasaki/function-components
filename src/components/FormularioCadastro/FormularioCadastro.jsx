@@ -1,19 +1,18 @@
 import React from 'react'
 import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField'
 // Quando criamos uma função,
 function FormularioCadastro() {
 
     //  O retorno dela precisa ser a árvore de renderização
-    return(
+    return (
         <form action="">
-            <label htmlFor="">Nome</label>
-            <input type="text" placeholder="Texto"/>
 
-            <label htmlFor="">Sobrenome</label>
-            <input type="text" placeholder="Texto"/>
+            <TextField id="nome" label="Nome" variant="outlined" fullWidth/>
 
-            <label htmlFor="">CPF</label>
-            <input type="text" placeholder="Texto"/>
+            <TextField id="sobrenome" label="Sobrenome" variant="outlined" fullWidth/>
+
+            <TextField id="cpf" label="CPF" variant="outlined" fullWidth/>
 
             <label htmlFor="">Promoções</label>
             <input type="checkbox" />
